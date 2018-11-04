@@ -4,7 +4,7 @@
   "description": "Following the Dan Abramov intro to Redux - https://egghead.io/courses/getting-started-with-redux",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack-dev-server --hot --inline"
   },
@@ -34,6 +34,8 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "expect": "^23.6.0",
+    "jest": "^23.6.0",
     "path": "^0.12.7",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
