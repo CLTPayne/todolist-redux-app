@@ -1,6 +1,6 @@
 # Todo List App - Exploring React, Redux and Webpack
 
-Following the Dan Abramov intro to Redux - https://egghead.io/courses/getting-started-with-redux
+Following the Dan Abramov intro to Redux - https://egghead.io/courses/getting-started-with-redux - add TDDing a simple todo list app with state management. Used the Jest test runner rather than just the expect library. 
 
 Aim of the project is to get started using Redux with a live application and code along with the tutorials.
 
@@ -13,3 +13,6 @@ Aim of the project is to get started using Redux with a live application and cod
 #### How to use the website locally:
 1. Launch development server with ```npm start``` and visit ```localhost:3000```
 2. When finished with the application, close the server with ```^c```
+
+#### How to run the tests:
+1. ```npm test```
