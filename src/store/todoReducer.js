@@ -1,3 +1,5 @@
+const Redux = require('redux');
+
 // Update a single todo:
 
 const todo = (state, action) => {
@@ -52,17 +54,30 @@ const visibilityFilter = (
   }
 };
 
-const todoApp = (state = {}, action) => {
-  return {
-    todos: todos(
-      state.todos,
-      action
-    ),
-    visibilityFilter: visibilityFilter(
-      state.visibilityFilter,
-      action
-    )
-  }
-}
+// Manual reducer compoisition to create a top level reducer:
+// (But this pattern is so common in Redux applications see combineReducers)
+
+// const todoApp = (state = {}, action) => {
+//   return {
+//     todos: todos(
+//       state.todos,
+//       action
+//     ),
+//     visibilityFilter: visibilityFilter(
+//       state.visibilityFilter,
+//       action
+//     )
+//   }
+// }
+
+
+// Arguement for combineReducers is an object that allows you to dictate the
+// mapping between the state fields and the reducers managing those bits of state
+
+const { combineReducers } = Redux
+const todoApp = combineReducers({
+  todos: todos,
+  visibilityFilter: visibilityFilter
+})
 
 module.exports = todoApp
