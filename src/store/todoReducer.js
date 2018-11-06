@@ -89,4 +89,21 @@ const todoApp = combineReducers({
   visibilityFilter
 })
 
+// How combineReducers works under the hood:
+
+// const combineReducers = (reducers) => {
+//   return (state = {}, action) => {
+//     return Object.keys(reducers).reduce(
+//       (nextState, key) => {
+//         nextState[key] = reducers[key](
+//           state[key],
+//           action
+//         );
+//         return nextState
+//       },
+//       {}
+//     );
+//   };
+// };
+
 module.exports = todoApp
