@@ -71,7 +71,7 @@ const visibilityFilter = (
 // }
 
 
-// Arguement for combineReducers is an object that allows you to dictate the
+// Argument for combineReducers is an object that allows you to dictate the
 // mapping between the state fields and the reducers managing those bits of state
 
 // const { combineReducers } = Redux
