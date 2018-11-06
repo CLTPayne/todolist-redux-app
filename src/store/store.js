@@ -1,9 +1,9 @@
 const Redux = require('redux');
 
-const todos = require('./todoReducer');
+const todoApp = require('./todoReducer');
 
 const { createStore } = Redux;
-const store = createStore(todos);
+const store = createStore(todoApp);
 
 console.log('Initial state:');
 console.log(store.getState());

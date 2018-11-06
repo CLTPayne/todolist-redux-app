@@ -24,6 +24,7 @@ const todo = (state, action) => {
 // Manage the array of todos:
 // Reducers are normal js functions so you can have many reducers calling
 // eachother and each contributing to a part of the application state tree.
+// Reducer composition is one reducer calling another reducer.
 
 const todos = (state = [], action) => {
   switch (action.type) {
@@ -39,4 +40,29 @@ const todos = (state = [], action) => {
   }
 };
 
-module.exports = todos
+const visibilityFilter = (
+  state = 'SHOW_ALL',
+  action
+) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter;
+    default:
+      return state;
+  }
+};
+
+const todoApp = (state = {}, action) => {
+  return {
+    todos: todos(
+      state.todos,
+      action
+    ),
+    visibilityFilter: visibilityFilter(
+      state.visibilityFilter,
+      action
+    )
+  }
+}
+
+module.exports = todoApp
