@@ -55,7 +55,7 @@ const visibilityFilter = (
 };
 
 // Manual reducer compoisition to create a top level reducer:
-// (But this pattern is so common in Redux applications see combineReducers)
+// (But this pattern is so common in Redux applications see combineReducers
 
 // const todoApp = (state = {}, action) => {
 //   return {
@@ -74,10 +74,19 @@ const visibilityFilter = (
 // Arguement for combineReducers is an object that allows you to dictate the
 // mapping between the state fields and the reducers managing those bits of state
 
+// const { combineReducers } = Redux
+// const todoApp = combineReducers({
+//   todos: todos,
+//   visibilityFilter: visibilityFilter
+// })
+
+// Finally as the state field name matches the reducer name, can use ES6
+// object literal notation:
+
 const { combineReducers } = Redux
 const todoApp = combineReducers({
-  todos: todos,
-  visibilityFilter: visibilityFilter
+  todos,
+  visibilityFilter
 })
 
 module.exports = todoApp
