@@ -10,20 +10,15 @@ module.exports = {
     port: 3000,
     contentBase: path.resolve(__dirname, 'public')
   },
-  modules: {
+  module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['bable-loader']
+        use: ['babel-loader']
       }
     ]
   },
   plugins: [
-    "syntax-class-properties",
-    "syntax-decorators",
-    "syntax-object-rest-spread",
-    "transform-class-properties",
-    "transform-object-rest-spread"
   ]
 }
