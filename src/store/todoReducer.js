@@ -21,7 +21,7 @@ const todo = (state, action) => {
     default:
       return state;
   }
-}
+};
 
 // Manage the array of todos:
 // Reducers are normal js functions so you can have many reducers calling

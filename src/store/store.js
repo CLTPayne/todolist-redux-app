@@ -3,7 +3,7 @@ const Redux = require('redux');
 const todoApp = require('./todoReducer');
 
 const { createStore } = Redux;
-const store = createStore(todoApp);
+export const store = createStore(todoApp);
 
 console.log('Initial state:');
 console.log(store.getState());
