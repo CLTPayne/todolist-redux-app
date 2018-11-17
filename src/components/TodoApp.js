@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 import { store } from '../store/store';
+import FilterLink from './FilterLink';
 
 let nextTodoId = 0;
 
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos;
+    case 'SHOW_COMPLETED':
+      return todos.filter(
+        t => t.completed
+      );
+    case 'SHOW_ACTIVE':
+      return todos.filter(
+        t => !t.completed
+      );
+  }
+}
+
 class TodoApp extends Component {
   render() {
+    const visibleTodos = getVisibleTodos(
+      this.props.todos,
+      this.props.visibilityFilter
+    );
     return (
       <div>
         <input ref={node => {
@@ -21,7 +41,7 @@ class TodoApp extends Component {
         Add Todo
         </button>
         <ul>
-          {this.props.todos.map(todo =>
+          {visibleTodos.map(todo =>
             <li key={todo.id}
               onClick={() => {
                 store.dispatch({
@@ -38,6 +58,21 @@ class TodoApp extends Component {
               {todo.text}
           </li>)}
         </ul>
+        <p>
+          Show:
+          {' '}
+          <FilterLink filter='SHOW_ALL'>
+          All
+          </FilterLink>
+          {' '}
+          <FilterLink filter='SHOW_ACTIVE'>
+          Active
+          </FilterLink>
+          {' '}
+          <FilterLink filter='SHOW_COMPLETED'>
+          Completed
+          </FilterLink>
+        </p>
       </div>
     )
   }
