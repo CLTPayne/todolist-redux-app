@@ -1,10 +1,5 @@
-const Redux = require('redux');
-
-const todoApp = require('./todoReducer');
-
-const { createStore } = Redux;
-export const store = createStore(todoApp);
-
+// Initially used a global variable for the store but not suitable for real world apps
+// export const store = createStore(todoApp);
 
 // Exmaple of hardcoded actions being dispatched and logged
 // This is dispatching and statechange handled by the view layer using react
