@@ -4,10 +4,7 @@ import VisibleTodoList from './VisibleTodoList';
 import AddTodo from './AddTodo';
 import Footer from './Footer';
 
-const TodoApp = ({
-  todos,
-  visibilityFilter
-}) => (
+const TodoApp = () => (
   <div>
     <AddTodo />
     <VisibleTodoList />
