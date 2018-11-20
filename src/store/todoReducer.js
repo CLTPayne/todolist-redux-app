@@ -1,5 +1,4 @@
-const Redux = require('redux');
-
+import { combineReducers } from 'redux';
 // Update a single todo:
 
 const todo = (state, action) => {
@@ -83,8 +82,7 @@ const visibilityFilter = (
 // Finally as the state field name matches the reducer name, can use ES6
 // object literal notation:
 
-const { combineReducers } = Redux
-const todoApp = combineReducers({
+export const todoApp = combineReducers({
   todos,
   visibilityFilter
 })
@@ -105,5 +103,3 @@ const todoApp = combineReducers({
 //     );
 //   };
 // };
-
-module.exports = todoApp
