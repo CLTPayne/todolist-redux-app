@@ -1,0 +1,65 @@
+body {
+  background-color: #d5d5d5;
+  font-size: 20px;
+  font-family: "Adobe Caslon Pro";
+}
+
+button {
+  background-color: darkgrey;
+  text-transform: uppercase;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+ul {
+  display: flex;
+  max-width: 40em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-right: 40px;
+}
+
+li {
+  font-size: 12.5px;
+  font-family: "Adobe Caslon Pro";
+  color: #464646;
+  flex-basis: 20em 1;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+  padding: 5px;
+  letter-spacing: 0.03em;
+}
+
+.addtodo__container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  display: flex;
+  position: center;
+  justify-content: center;
+  max-width: 20em;
+  flex-wrap: wrap;
+}
+
+.addtodo__input {
+  font-size: 14px;
+  padding: 10px;
+  width: 30em;
+  color: #464646;
+  font-family: "Adobe Caslon Pro";
+}
+
+.addtodo__button {
+  margin-top: 10px;
+  position: relative;
+  font-size: 14px;
+  color: #464646;
+  padding: 10px;
+  display: block;
+  font-family: "Adobe Caslon Pro";
+
+}
